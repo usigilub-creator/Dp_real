@@ -759,7 +759,7 @@ input[type=range]{height:28px}
 .x-tabs button{flex:1 0 auto;padding:0 .93em;height:3.33em;color:#71767b;font-weight:600;font-size:1em;display:flex;justify-content:center}
 .x-tabs button span{display:flex;align-items:center;gap:3px;height:100%;position:relative;white-space:nowrap}
 .x-tabs button.on{color:#e7e9ea;font-weight:800}.x-tabs button.on span::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;border-radius:2px;background:#1d9bf0}
-.x-tabs .x-plus{flex:0 0 48px;font-size:22px;font-weight:400}
+.x-tabs .x-plus{flex:0 0 48px;font-size:22px;font-weight:400;height:auto;align-self:stretch;align-items:center}
 .x-car{font-style:normal;font-size:13px;opacity:.8;transform:translateY(-2px)}
 .x-p{display:flex;gap:.67em;padding:.8em .93em .27em;border-bottom:1px solid #2f3336;cursor:pointer}
 .x-p.gone{padding:12px 14px}
@@ -810,7 +810,7 @@ input[type=range]{height:28px}
 .x-sec{font-size:1.33em;font-weight:800;padding:.93em .93em .4em}.x-sec.sm{font-size:1.07em;padding:.8em .93em;border-bottom:1px solid #2f3336}
 .x-mute{color:#71767b;padding:28px 18px;text-align:center;font-size:14.5px}
 .x-moreb{display:block;width:100%;padding:16px;color:#1d9bf0;font-size:15px}
-.x-newpill{position:absolute;left:50%;transform:translateX(-50%);top:7.2em;z-index:5;display:flex;align-items:center;gap:6px;background:#1d9bf0;color:#fff;border-radius:20px;padding:6px 14px 6px 12px;font-weight:700;font-size:14px;box-shadow:0 2px 10px rgba(0,0,0,.5);animation:fvcIn .3s ease-out both}
+.x-newpill{display:flex;margin:10px auto;position:relative;z-index:1;display:flex;align-items:center;gap:6px;background:#1d9bf0;color:#fff;border-radius:20px;padding:6px 14px 6px 12px;font-weight:700;font-size:14px;box-shadow:0 2px 10px rgba(0,0,0,.5);animation:fvcIn .3s ease-out both}
 .x-newpill span{display:flex}.x-newpill .x-av{border:2px solid #1d9bf0;margin-left:-6px}.x-newpill .x-av:first-child{margin-left:0}
 .x-sbox{flex:1;display:flex;align-items:center;gap:8px;height:40px;background:#202327;border-radius:22px;padding:0 16px;color:#71767b;font-size:15px;cursor:text}.x-sbox svg{width:17px;height:17px}.x-sbox.on{color:#e7e9ea;border:1px solid #1d9bf0;background:#000}
 .x-tr{display:flex;justify-content:space-between;align-items:flex-start;padding:12px 14px;cursor:pointer}
@@ -842,11 +842,11 @@ input[type=range]{height:28px}
 .x-ff span{white-space:nowrap}.x-ff{display:flex;gap:16px;margin-top:10px;color:#71767b;font-size:14.5px}.x-ff b{color:#e7e9ea}
 .x-sus{padding:30px 22px}.x-sus b{font-size:26px;font-weight:800}.x-sus p{color:#71767b}
 .x-replybar{flex:none;display:flex;align-items:center;gap:10px;padding:10px 14px 12px;border-top:1px solid #2f3336;background:#000;color:#71767b;cursor:text}
-.x-fab{position:absolute;right:16px;bottom:72px;width:56px;height:56px;border-radius:50%;background:#1d9bf0;color:#fff;display:grid;place-items:center;box-shadow:0 2px 10px rgba(255,255,255,.12),0 4px 14px rgba(0,0,0,.6);z-index:5}
+.x-fab{position:absolute;right:14px;bottom:84px;width:56px;height:56px;border-radius:50%;background:#1d9bf0;color:#fff;display:grid;place-items:center;box-shadow:0 2px 10px rgba(255,255,255,.12),0 4px 14px rgba(0,0,0,.6);z-index:5}
 .x-fab svg{width:24px;height:24px}.x-fab b{position:absolute;top:10px;left:13px;font-size:15px;line-height:1}
 .x-nav{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-around;background:#000;border-top:1px solid #2f3336;padding:2px 0 4px;z-index:5}
 .x-nav button{color:#e7e9ea;position:relative;min-width:56px;height:46px;display:grid;place-items:center}.x-nav svg{width:26px;height:26px}
-.x-nav em{position:absolute;top:4px;left:31px;background:#1d9bf0;color:#fff;font-style:normal;font-size:11px;font-weight:700;border-radius:10px;padding:1px 5px;border:2px solid #000;line-height:1.2}
+.x-nav em{position:absolute;top:2px;left:50%;margin-left:1px;white-space:nowrap;background:#1d9bf0;color:#fff;font-style:normal;font-size:10.5px;font-weight:700;border-radius:10px;padding:1px 5px;border:2px solid #000;line-height:1.2}
 .x-sheet{display:flex;flex-direction:column;padding:6px 6px 14px}.x-sheet>button{display:flex;align-items:center;gap:12px;padding:14px 14px;font-size:15.5px;font-weight:700;text-align:left}.x-sheet>button svg{width:20px;height:20px}
 .x-sheet input{margin:4px 10px 6px;width:auto}
 .x-comp{padding:0 14px 16px}.x-ch{display:flex;justify-content:space-between;align-items:center;padding:4px 0 10px}.x-ch .x-ib{width:auto;font-size:15px}
@@ -3522,7 +3522,7 @@ defApp('settings', {
     generic(p) {
       const m = SET_FLAT.find(x => x[0] === p.k) || [p.k, p.k];
       const opts = { ai: ['통화 실시간 통역', '노트 어시스트', '브라우징 어시스트', '사진 어시스트'], modes: ['수면 모드', '운동 모드', '운전 모드'], devices: ['Quick Share', '다른 기기에서 통화 및 문자', 'Android Auto'], homescreen: ['앱스 화면 버튼 표시', '홈 화면 레이아웃 잠금', '앱 아이콘 배지'], lockscreen: ['Always On Display', '잠금화면 알림 표시', '빠른 실행'], location: ['위치 사용', 'Wi-Fi 검색', '블루투스 검색'], care: ['자동 최적화', '메모리 정리', '저장공간 정리'], general: ['자동 날짜 및 시간', '맞춤법 검사', '24시간 형식 사용'], access: ['고대비 글꼴', '색상 반전', '모션 줄이기'], theme: ['테마 아이콘', 'AOD 테마'], account: ['자동 동기화', 'Samsung Cloud 백업'], google: ['Google 백업', '광고 맞춤 설정'], safety: ['긴급 SOS', '재난 문자'], bio: ['얼굴 인식', '지문', '생체 인식 보안 강화'] }[p.k] || ['기본 설정'];
-      return `${hdr(m[1])}<div class="content"><div class="card">${opts.map((o, i) => setRow(o, '', sw(S.settings.flags[p.k + i] != null ? S.settings.flags[p.k + i] : i !== 1 && !(p.k === 'general' && i === 2), 'settings.flag', p.k + i))).join('')}</div>${p.k === 'general' ? `<div class="sec">초기화</div><div class="card">${setRow('대화·기록 초기화', '보낸 메시지, 찍은 사진, 주문·검색 기록을 지우고 처음 상태로 돌려요', '', 'settings.resetStory')}${setRow('모든 설정 초기화', '설정과 데이터를 모두 지우고 휴대전화를 처음 상태로 되돌려요', '', 'settings.factoryReset')}</div>${S.rumor ? `<div class="sec">열애설 모드</div><div class="card">${setRow('처음부터 다시 시작', '콘서트 전날 밤 8시 41분으로 돌아가요 · 모은 엔딩은 그대로 남아요', '', 'ru.restartAsk')}</div>` : S.epi ? '' : `<div class="sec">스토리</div><div class="card">${setRow('영화 보는 날로 건너뛰기', '10월 24일(토) 아침, 치이카와 보는 날로 이동해요', '', 'settings.movieJump')}${setRow('스토리 건너뛰기', '영화 보는 날 이후로 바로 이동해요', '', 'settings.epiJump')}</div>`}` : ''}</div>`;
+      return `${hdr(m[1])}<div class="content"><div class="card">${opts.map((o, i) => setRow(o, '', sw(S.settings.flags[p.k + i] != null ? S.settings.flags[p.k + i] : i !== 1 && !(p.k === 'general' && i === 2), 'settings.flag', p.k + i))).join('')}</div>${p.k === 'general' ? `<div class="sec">초기화</div><div class="card">${setRow('대화·기록 초기화', '보낸 메시지, 찍은 사진, 주문·검색 기록을 지우고 처음 상태로 돌려요', '', 'settings.resetStory')}${setRow('모든 설정 초기화', '설정과 데이터를 모두 지우고 휴대전화를 처음 상태로 되돌려요', '', 'settings.factoryReset')}</div>${S.rumor ? `<div class="sec">열애설 모드</div><div class="card">${setRow('콘서트 날로 건너뛰기', '3월 27일 FINAL 1일차 아침으로 이동해요 · 그날 밤은 자동으로 흘러가요', '', 'ru.skipAsk')}${setRow('처음부터 다시 시작', '콘서트 전날 밤 8시 41분으로 돌아가요 · 모은 엔딩은 그대로 남아요', '', 'ru.restartAsk')}</div>` : S.epi ? '' : `<div class="sec">스토리</div><div class="card">${setRow('영화 보는 날로 건너뛰기', '10월 24일(토) 아침, 치이카와 보는 날로 이동해요', '', 'settings.movieJump')}${setRow('스토리 건너뛰기', '영화 보는 날 이후로 바로 이동해요', '', 'settings.epiJump')}</div>`}` : ''}</div>`;
     },
   },
   actions: {
@@ -7124,6 +7124,13 @@ const RS = [
       { t: '형이랑 상의하고 말씀드릴게요', aff: 1, f: 'execWait', after: ['…그래요. 두 사람 일이니까', '대신 오늘 밤 안에 결정해 줘요', '회사는 그 결정에 맞춰서 움직일게요'] }] }, d: 8 },
   { clk: [3, 26, 22, 5], d: 3 },
   K('kpr', '정민지 실장님', '도운 씨, 홍보팀 정민지 실장입니다', 3), K('kpr', '정민지 실장님', '입장문 초안 세 가지 정리했어요', 2.2), K('kpr', '정민지 실장님', '① 사실무근 (친한 동료)\n② 사생활 확인 불가\n③ 인정 및 양해 요청', 2.6), K('kpr', '정민지 실장님', '이사님 지시로 23시 30분까지 두 분 결정 부탁드려요', 2.6),
+  { ask: 'kpr', o: [
+    { t: '①번이요. 사실무근으로 내주세요', f: 'prDeny', aff: -1,
+      re: [['kpr', '정민지 실장님', '①번으로 정리하겠습니다'], ['kpr', '정민지 실장님', '…혹시 나중에 다른 게 나와도 회사 입장은 그대로 갑니다']] },
+    { t: '②번이요. 사생활은 말 안 하는 걸로', f: 'prHide',
+      re: [['kpr', '정민지 실장님', '②번으로 정리하겠습니다'], ['kpr', '정민지 실장님', '두 분 사생활은 회사가 끝까지 말 안 할게요']] },
+    { t: '③번이요. 인정하고 양해 구할게요', f: 'prOpen', aff: 1,
+      re: [['kpr', '정민지 실장님', '③번이요… 이사님께 다시 올려보겠습니다'], ['kpr', '정민지 실장님', '쉽지 않은 결정 하셨네요. 잘 쓰겠습니다']] }] },
   { when: R => R.f.truth, k: 'kty', f: '영현이 형', t: '야 나 아직도 놀람 ㅋㅋㅋ', d: 8 },
   { when: R => R.f.truth, k: 'kty', f: '영현이 형', t: '근데 너 김원필 볼 때 웃는 거 나 알고 있었던 것 같기도', d: 2.6 },
   { when: R => R.f.truth, k: 'kty', f: '영현이 형', t: '형이 편들어줄게. 진짜로', d: 2.2 },
@@ -7606,6 +7613,9 @@ function ruDecide2(R) {
   /* 기존 분기 */
   if (f.fin === 'apart' || aff <= 0) return 'apart';
   if (f.execDeny && (f.deny || f.mgrDeny)) return 'caught';
+  /* 입장문으로 ①②③ 중 무엇을 골랐는지 (형과의 결론 f.fin 이 있으면 그쪽이 우선) */
+  if (f.prDeny && !f.fin) return f.truth ? 'caught' : 'apart';
+  if (f.prOpen && f.fin !== 'secret' && f.fin !== 'apart') return 'open';
   if (f.fin === 'open' && aff >= 3) return 'open';
   if (f.truth && (f.mgr || f.exec || f.together)) return 'secret5';
   return 'secret';
@@ -7769,6 +7779,7 @@ const RU_IC = {
   view: '<svg viewBox="0 0 24 24"><path d="M8.75 21V3h2v18zM18 21V8.5h2V21zM4 21l.004-10h2L6 21zm9.25 0v-7h2v7z" fill="currentColor"/></svg>',
   bm: '<svg viewBox="0 0 24 24"><path d="M4 4.5C4 3.12 5.12 2 6.5 2h11C18.88 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71zM6.5 4c-.28 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.22-.5-.5-.5z" fill="currentColor"/></svg>',
   bmon: '<svg viewBox="0 0 24 24"><path d="M4 4.5C4 3.12 5.12 2 6.5 2h11C18.88 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71z" fill="currentColor"/></svg>',
+  quote: '<svg viewBox="0 0 24 24"><path d="M4.5 3.9h15c1.2 0 2.1.9 2.1 2.1v9c0 1.2-.9 2.1-2.1 2.1h-4.2l-4.4 3.6c-.5.4-1.2 0-1.2-.6v-3H4.5c-1.2 0-2.1-.9-2.1-2.1V6c0-1.2.9-2.1 2.1-2.1zm0 1.8c-.2 0-.3.1-.3.3v9c0 .2.1.3.3.3h6.6v2.4l2.9-2.4h5.5c.2 0 .3-.1.3-.3V6c0-.2-.1-.3-.3-.3h-15zM8 8.4h8v1.7H8V8.4zm0 3h5.5v1.7H8v-1.7z"/></svg>',
   share: '<svg viewBox="0 0 24 24"><path d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15z" fill="currentColor"/></svg>',
   more: '<svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="19" cy="12" r="1.8" fill="currentColor"/></svg>',
   home: '<svg viewBox="0 0 24 24"><path d="M12 1.7L.9 9.2l1.1 1.7 1.3-.9V20c0 1.1.9 2 2 2h13.4c1.1 0 2-.9 2-2V10l1.3.9 1.1-1.7zM19 20h-4.5v-6h-5v6H5V8.7l7-4.7 7 4.7z" fill="currentColor"/></svg>',
@@ -7807,7 +7818,7 @@ function ruQuote(q) {
 }
 function ruActs(p, v) {
   const st = ruStats(p), a = (S.rumor.act || {})[p.id] || {};
-  return `<div class="x-acts${v ? '' : ' nov'}" data-live="${p.id}"><button data-a="chirp.reply" data-x="${p.id}">${RU_IC.reply}<span class="lv-c">${st.C ? ruFmt(st.C) : ''}</span></button><button data-a="chirp.rt" data-x="${p.id}" class="${a.r ? 'rt' : ''}">${RU_IC.rt}<span class="lv-r">${st.R ? ruFmt(st.R) : ''}</span></button><button data-a="chirp.like" data-x="${p.id}" class="${a.l ? 'lk' : ''}">${a.l ? RU_IC.liked : RU_IC.like}<span class="lv-l">${st.L ? ruFmt(st.L) : ''}</span></button>${v ? `<button data-a="chirp.stat" data-x="${p.id}">${RU_IC.view}<span class="lv-v">${ruFmt(st.V)}</span></button>` : `<button data-a="chirp.bm" data-x="${p.id}" class="${a.b ? 'bm' : ''}">${a.b ? RU_IC.bmon : RU_IC.bm}<span class="lv-b">${st.B ? ruFmt(st.B) : ''}</span></button>`}<span class="x-r2">${v ? `<button data-a="chirp.bm" data-x="${p.id}" class="${a.b ? 'bm' : ''}">${a.b ? RU_IC.bmon : RU_IC.bm}</button>` : ''}<button data-a="chirp.quote" data-x="${p.id}" aria-label="인용" title="인용">${RU_IC.share}</button><button data-a="chirp.share" data-x="${p.id}" aria-label="공유">${RU_IC.share}</button></span></div>`;
+  return `<div class="x-acts${v ? '' : ' nov'}" data-live="${p.id}"><button data-a="chirp.reply" data-x="${p.id}">${RU_IC.reply}<span class="lv-c">${st.C ? ruFmt(st.C) : ''}</span></button><button data-a="chirp.rt" data-x="${p.id}" class="${a.r ? 'rt' : ''}">${RU_IC.rt}<span class="lv-r">${st.R ? ruFmt(st.R) : ''}</span></button><button data-a="chirp.like" data-x="${p.id}" class="${a.l ? 'lk' : ''}">${a.l ? RU_IC.liked : RU_IC.like}<span class="lv-l">${st.L ? ruFmt(st.L) : ''}</span></button>${v ? `<button data-a="chirp.stat" data-x="${p.id}">${RU_IC.view}<span class="lv-v">${ruFmt(st.V)}</span></button>` : `<button data-a="chirp.bm" data-x="${p.id}" class="${a.b ? 'bm' : ''}">${a.b ? RU_IC.bmon : RU_IC.bm}<span class="lv-b">${st.B ? ruFmt(st.B) : ''}</span></button>`}<span class="x-r2">${v ? `<button data-a="chirp.bm" data-x="${p.id}" class="${a.b ? 'bm' : ''}">${a.b ? RU_IC.bmon : RU_IC.bm}</button>` : ''}<button data-a="chirp.quote" data-x="${p.id}" aria-label="인용" title="인용">${RU_IC.quote}</button><button data-a="chirp.share" data-x="${p.id}" aria-label="공유">${RU_IC.share}</button></span></div>`;
 }
 function ruCard(p, big, inRe) {
   if (ruGone(p)) return `<article class="x-p gone"><div class="x-q gone" style="flex:1">이 게시물은 더 이상 볼 수 없습니다.</div></article>`;
@@ -8716,6 +8727,8 @@ function ruDmUnread() { const R = S.rumor; if (!R) return 0; return Object.value
 defApp('chirp', {
   name: 'X', tint: '#000000',
   sbBg: () => '#000',
+  /* X 를 켤 때마다 에딧이 다시 맨 위로 온다. 새로고침하면 한 칸씩 아래로 내려간다 */
+  onOpen() { CH.edN = 0; },
   views: {
     main(p) {
       const R = S.rumor; if (!R) return `<div class="x"><div class="empty" style="padding-top:40%">로그인이 필요합니다</div></div>`;
@@ -8740,9 +8753,9 @@ defApp('chirp', {
         /* 「베스티-연애의 조건」 에딧은 터지기 전이든 후든 늘 맨 위쪽에 걸린다.
            못 박진 않아서, 새로고침할 때마다 바로 위 칸과 아래 칸을 오간다. */
         if (!alt) {
-          const ed = feed.find(x => x.id === 'xv0');
-          if (ed) {
-            const at = feed.indexOf(ed), slot = Math.min(headN + ((R.hotI || 0) % 2), feed.length - 1);
+          const ed = feed.find(x => x.id === 'xv0'), step = CH.edN || 0;
+          if (ed && step <= 12) {
+            const at = feed.indexOf(ed), slot = Math.min(headN + step * 3, feed.length - 1);
             if (at !== slot) { feed.splice(at, 1); feed.splice(slot, 0, ed); }
           }
         }
@@ -8881,6 +8894,7 @@ defApp('chirp', {
       }
       // 상단 고정 게시물도 추천 탭에서는 최신 시간순으로 밀려나며, 비계 글은 계속 제외한다.
       R.hotI = (R.hotI || 0) + 1;   /* 맨 위에 올라오는 화제의 글을 다음 것으로 넘긴다 */
+      CH.edN = (CH.edN || 0) + 1;   /* 에딧을 한 칸씩 아래로 */
       /* 당겨 올릴 때마다 새 트윗이 여러 개 올라온다. 지금 단계의 분위기에 맞는 글들로. */
       const alt_ = ruMe() === 'alt', n = 5 + Math.floor(Math.random() * 4);
       for (let i = 0; i < n; i++) {
@@ -9106,7 +9120,7 @@ function ruScript(R) { return R.end ? RU_END[R.end] : RS; }
 function ruCur() { const R = S.rumor; if (!R) return null; if (R.q.length) return R.q[0]; return ruScript(R)[R.end ? R.ei : R.i]; }
 function ruAdvance(R) { if (R.q.length) R.q.shift(); else if (R.end) R.ei++; else R.i++; }
 function ruApply(R, o) {
-  R.aff += o.aff || 0; if (o.f) R.f[o.f] = 1; if (o.fin) R.fin = o.fin; (R.picks = R.picks || []).push(o.t);
+  R.aff += o.aff || 0; if (o.f) R.f[o.f] = 1; if (o.fin) { R.fin = o.fin; R.f.fin = o.fin; } (R.picks = R.picks || []).push(o.t);
   /* 무대에서 고른 말이 바로 탐라에 올라온다 */
   if (o.react) try { (Array.isArray(o.react) ? o.react : [o.react]).forEach((tx, i) => { const p = ruGenPost(R, tx); p.t = Date.now() + i * 1400; p.L = Math.floor(p.L * 2.6); }); } catch (e) { console.error(e); }
   if (o.mic === 'fail') R.micFail = (R.micFail || 0) + 1;
@@ -9150,11 +9164,46 @@ function ruFire(b) {
   if (b.fn) b.fn(R);
   if (b.ask) { R.wait = { type: 'ask', chat: b.ask }; save(); ruChipsRefresh(); return; }
   if (b.call) { R.wait = { type: 'call' }; save(); ruRing(); return; }
-  if (b.decide) { R.i++; R.end = ruDecide(R); R.ei = 0; R.endAt = Date.now(); save(); return ruRun(); }
+  if (b.decide) { R.i++; R.end = ruDecide(R); R.ei = 0; R.endAt = Date.now(); save(); return RU.ff ? null : ruRun(); }
   ruAdvance(R);
-  if (b.card) { R.done = 1; save(); return ruEndCard(); }
-  save(); ruRun();
+  if (b.card) { R.done = 1; save(); return RU.ff ? null : ruEndCard(); }
+  save(); if (!RU.ff) ruRun();
 }
+
+/* ===== 콘서트 날로 건너뛰기 =====
+   그날 밤 이야기를 타자 속도 없이 끝까지 돌린 다음, 3월 27일 아침 앞에서 멈춘다.
+   선택지가 나오면 지금까지의 호감도에 맞는 쪽을 자동으로 고른다. */
+function ruSkipToConcert() {
+  const R = S.rumor; if (!R || R.done) return false;
+  const DAY = RUT(3, 27, 6, 0);
+  RU.ff = 1; clearTimeout(RU.t); RU.t = null; clearTimeout(RU.ty);
+  try {
+    for (let guard = 0; guard < 4000; guard++) {
+      if (R.done) break;
+      let bb = ruCur();
+      while (bb && bb.when && !bb.when(R)) { ruAdvance(R); bb = ruCur(); }
+      if (!bb) break;
+      if (Array.isArray(bb)) bb = { k: bb[0], f: bb[1], t: bb[2] };
+      if (bb.clk && RUT(...bb.clk) >= DAY) break;        /* 콘서트 날 첫 장면 직전에서 멈춘다 */
+      if (bb.gate) { R.gateAt = 0; ruAdvance(R); continue; }
+      if (bb.ask) {                                       /* 선택지는 지금 흐름에 맞춰 자동으로 */
+        const opts = ruOpts(bb); if (!opts.length) { ruAdvance(R); continue; }
+        const o = opts[R.aff >= 0 ? 0 : opts.length - 1], ch = ruChat(bb.ask);
+        if (ch && !o.silent) ch.msgs.push({ id: uid(), from: OWNER, me: true, text: o.t, t: Date.now() });
+        ruApply(R, o); R.wait = null; ruAdvance(R); (o.re || []).forEach(r => R.q.push(r));
+        continue;
+      }
+      if (bb.call) { ruAdvance(R); continue; }            /* 전화는 부재중 처리하고 넘어간다 */
+      R.wait = null; ruFire(bb);
+    }
+  } finally { RU.ff = 0; }
+  R.wait = null; clockSet(Math.max(Date.now(), DAY));
+  save(); return true;
+}
+window.ruSkipToConcert = ruSkipToConcert;
+A['ru.skipAsk'] = () => dialog('콘서트 날로 건너뛰기',
+  '3월 27일 공연 당일 아침으로 이동해요. 그날 밤 이야기는 지금까지의 선택에 맞춰 자동으로 흘러가고, 엔딩은 그대로 남아요.',
+  [{ t: '취소' }, { t: '건너뛰기', f: () => { if (ruSkipToConcert()) { back(); toast('3월 27일 공연 당일로 왔어요'); refresh(); ruRun(); } } }]);
 function ruChipsRefresh() { const R = S.rumor; if (R && R.wait && R.wait.chat && ruHere(R.wait.chat)) { patch('stChips', storyChipsHtml()); const sc = $('#kScroll'); if (sc) sc.scrollTop = sc.scrollHeight; } }
 const _ruChips = storyChipsHtml;
 storyChipsHtml = function () {
